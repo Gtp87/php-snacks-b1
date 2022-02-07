@@ -10,16 +10,34 @@
 </head>
 <body>
     <div id="app">
-    <div v-for="car in cars">
-        <img :src="car.foto" alt="">
-        <h3>{{car.marca}}</h3>
-        <h3>{{car.modello}}</h3>
-        <h3>{{car.prezzo}}</h3>
-        <h3>{{car.trazione}}</h3>
-        <h3>{{car.km}}</h3>
-        <h3>{{car.targa}}</h3>
-        <h3>{{car.immatricolazione}}</h3>
-    </div> 
+        <span>Scegli carburante</span>
+        <select @change="carsFilter()" v-model="filterFuel" name="carburante" id="carburante" >
+            <option value="all">All</option>
+            <option value="diesel">Diesel</option>
+            <option value="benzina">Benzina</option>
+        </select>
+        <span>Scegli colore</span>
+        <select @change="carsFilter()" v-model="filterColor" name="colore" id="colore" >
+            <option value="all">All</option>
+            <option value="nero">Nero</option>
+            <option value="bianco">Bianco</option>
+            <option value="grigio">Grigio</option>
+            <option value="rosso">Rosso</option>
+            <option value="verde">Verde</option>
+        </select>
+        <div v-for="car in cars">
+            <img :src="car.foto" alt="">
+            <h3>{{car.marca}}</h3>
+            <h3>{{car.modello}}</h3>
+            <h3>{{car.prezzo}}</h3>
+            <h3>{{car.trazione}}</h3>
+            <h3>{{car.km}}</h3>
+            <h3>{{car.targa}}</h3>
+            <h3>{{car.immatricolazione}}</h3>
+            <h3>{{car.colore}}</h3>
+            <h3>{{car.carburante}}</h3>
+            
+        </div> 
     </div>
 
     <!-- axios -->
