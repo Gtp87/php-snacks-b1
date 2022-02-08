@@ -25,7 +25,7 @@
             <option value="rosso">Rosso</option>
             <option value="verde">Verde</option>
         </select>
-        <div v-for="car in cars">
+        <div v-for="car in arrayFiltered">
             <img :src="car.foto" alt="">
             <h3>{{car.marca}}</h3>
             <h3>{{car.modello}}</h3>
